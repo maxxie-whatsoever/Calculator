@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class Display extends React.Component {
+class Display extends Component {
     render() {
         let {display} = this.props;
         return(
