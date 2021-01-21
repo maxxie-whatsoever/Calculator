@@ -1,6 +1,6 @@
 .result {
-  height: 60px;
-  background-color: #bbb;
+  height: 80px;
+  background-color: rgb(39, 40, 42);
   width: 100%;
 }
 
@@ -11,8 +11,9 @@
 }
 
 .container {
-  max-width: 400px;
+  max-width: 250px;
   margin: auto;
+  border-radius: 15px;
 }
 
 .buttons {
@@ -24,8 +25,22 @@ button {
   width: 25%;
   height: 60px;
   font-size: 30px;
+  background-color: rgb(123, 123, 123);
+  color: #ffffff;
+  border: 0;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
-button:last-child {
+button:nth-last-child(-n+3) {
+  border-bottom: none;
+}
+
+button:nth-child(4n), button:last-child {
+  background-color: rgb(243, 162, 60);
+  border-right: none;
+}
+
+.zero {
   width: 50%;
 }
