@@ -1,6 +1,13 @@
+.container {
+  max-width: 250px;
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
 .result {
   height: 80px;
-  background-color: rgb(39, 40, 42);
+  background-color: rgb(34, 34, 34);
   width: 100%;
 }
 
@@ -10,12 +17,6 @@
 
 }
 
-.container {
-  max-width: 250px;
-  margin: auto;
-  border-radius: 15px;
-}
-
 .buttons {
   display: block;
   background-color: #bbb;
@@ -23,21 +24,27 @@
 
 button {
   width: 25%;
-  height: 60px;
-  font-size: 30px;
-  background-color: rgb(123, 123, 123);
-  color: #ffffff;
+  height: 50px;
+  font-size: 27px;
+  background-color: rgb(89, 89, 89);
+  color: rgb(230, 230, 230);
   border: 0;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
+  font-family: "Helvetica Neue", sans-serif;
+  outline: none;
 }
 
 button:nth-last-child(-n+3) {
   border-bottom: none;
 }
 
+button:nth-child(-n+3) {
+  background-color: rgb(56, 56, 56);
+}
+
 button:nth-child(4n), button:last-child {
-  background-color: rgb(243, 162, 60);
+  background-color: rgb(255, 159, 10);
   border-right: none;
 }
 
