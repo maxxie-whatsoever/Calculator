@@ -1,14 +1,30 @@
+#root {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   max-width: 250px;
-  margin: auto;
   border-radius: 10px;
   overflow: hidden;
 }
 
 .result {
+  display: flex;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  padding-right: 10px;
+  padding-top: 15px;
   height: 80px;
   background-color: rgb(34, 34, 34);
   width: 100%;
+  font: 16px "Avenir", sans-serif;
+  color: rgb(230, 230, 230);
 }
 
 .result p {
@@ -51,3 +67,5 @@ button:nth-child(4n), button:last-child {
 .zero {
   width: 50%;
 }
+
+

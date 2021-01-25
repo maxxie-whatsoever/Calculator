@@ -1,15 +1,38 @@
 import React, {Component} from 'react';
-import Calculator from './Calculator';
+import Display from './Display';
+import Buttons from './Buttons.jsx';
+import './styles/App.css';
+import './styles/index.css';
 
 class App extends Component {
-  render() {
-    return (
-        <div className='container'>
-            <Calculator/>
-        </div>
-    )
-  }
+    constructor(props) {
+        super(props);
+        this.initialState = {
+            displayValue: '0',
+            value: 0
+        }
+    }
+
+    clickEvent = button => {
+        if(button === 'AC') {
+            this.reset();
+        }
+    }
+
+    reset = () =>  {
+        this.setState({
+            result: ''
+        })
+    }
+
+    render() {
+        return (
+            <div className='container'>
+                <Display name='0'/>
+                <Buttons/>
+            </div>
+        )
+    }
 }
 
 export default App;
-

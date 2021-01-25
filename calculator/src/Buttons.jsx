@@ -1,6 +1,18 @@
 import React, {Component} from 'react';
 
 class Buttons extends Component {
+    constructor(props) {
+        super(props);
+        this.initialState = {
+            displayValue: '0',
+            value: props.value
+        }
+    }
+
+    clickEvent = (value) => {
+        this.setState(this.initialState.value)
+    }
+
     render () {
         return (
             <div className='buttons'>
@@ -9,9 +21,9 @@ class Buttons extends Component {
                 <button name='%'>                               %      </button>
                 <button name='divide'>                          ÷      </button>
 
-                <button name='1'>                               7      </button>
-                <button name='2'>                               8      </button>
-                <button name='3'>                               9      </button>
+                <button name='7'>                               7      </button>
+                <button name='8'>                               8      </button>
+                <button name='9'>                               9      </button>
                 <button name='multiply'>                        ×      </button>
 
                 <button name='4'>                               4      </button>
@@ -19,9 +31,9 @@ class Buttons extends Component {
                 <button name='6'>                               6      </button>
                 <button name='subtract'>                        -      </button>
 
-                <button name='7'>                               1      </button>
-                <button name='8'>                               2      </button>
-                <button name='9'>                               3      </button>
+                <button name='1'>                               1      </button>
+                <button name='2'>                               2      </button>
+                <button name='3'>                               3      </button>
                 <button name='add'>                             +      </button>
 
                 <button name='0' className='zero'>              0      </button>
