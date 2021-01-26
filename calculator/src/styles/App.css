@@ -35,7 +35,7 @@
 }
 
 .buttons {
-  display: block;
+  width: 250px;
   background-color: #bbb;
 }
 
@@ -52,6 +52,10 @@ button {
   outline: none;
 }
 
+button:active{
+  background-color: rgb(157, 157, 157);
+}
+
 button:nth-last-child(-n+3) {
   border-bottom: none;
 }
@@ -60,13 +64,21 @@ button:nth-child(-n+3) {
   background-color: rgb(56, 56, 56);
 }
 
-button:nth-child(4n), button:last-child {
+button:nth-child(-n+3):active {
+  background-color: rgb(89, 89, 89);
+}
+/*button:nth-child(4n), button:last-child {*/
+/*  background-color: rgb(255, 159, 10);*/
+/*  border-right: none;*/
+/*}*/
+button.orange {
   background-color: rgb(255, 159, 10);
-  border-right: none;
+}
+
+button.orange:active {
+  background-color: rgb(193, 128, 46);
 }
 
 .zero {
   width: 50%;
 }
-
-
