@@ -13,19 +13,13 @@ class App extends Component {
     }
 
     onClick = button => {
-
         if(button === "="){
             this.calculate()
-        }
-
-        else if(button === "c"){
+        } else if(button === "c"){
             this.reset()
-        }
-        else if(button === "del"){
+        } else if(button === "ce"){
             this.backspace()
-        }
-
-        else {
+        } else {
             this.setState({
                 result: this.state.result + button
             })
@@ -34,24 +28,10 @@ class App extends Component {
 
 
     calculate = () => {
-        let checkResult = ''
-        if(this.state.result.includes('--')){
-            checkResult = this.state.result.replace('--','+')
-        }
 
-        else {
-            checkResult = this.state.result
-        }
-
-        try {
-            this.setState({
-                result: (eval(checkResult) || "" ) + ""
-            })
-        } catch (e) {
-            this.setState({
-                result: "error"
-            })
-        }
+        this.setState({
+            result: (eval(this.state.result) || "" ) + ""
+        })
     };
 
     reset = () => {
