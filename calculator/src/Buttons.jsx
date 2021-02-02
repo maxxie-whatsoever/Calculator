@@ -1,37 +1,42 @@
 import React, {Component} from 'react';
 
-// const buttons = [
-//     { data: 'c', label: 'C', className: 'zero' },
-//     { data: 'ce', label: 'CE' },
-// ];
+const buttons = [
+    { dataVal: 'c', label: 'C', className: 'zero' },
+    { dataVal: 'ce', label: 'CE'},
+    { dataVal: '/', label: '÷', className: 'orange' },
+    { dataVal: '7' },
+    { dataVal: '8' },
+    { dataVal: '9' },
+    { dataVal: '*', label: '×', className: 'orange' },
+    { dataVal: '4'},
+    { dataVal: '5'},
+    { dataVal: '6'},
+    { dataVal: '-', className: 'orange' },
+    { dataVal: '1' },
+    { dataVal: '2' },
+    { dataVal: '3' },
+    { dataVal: '+', className: 'orange' },
+    { dataVal: '0', className: 'zero' },
+    { dataVal: '.', label: ',' },
+    { dataVal: '=', className: 'orange' },
+];
 
 class Buttons extends Component {
 
     render() {
+        const listButton = buttons.map ( item => (
+            <button
+                data-val={item.dataVal}
+                onClick={e => this.props.onClick(e.target.getAttribute('data-val'))}
+                className={item.className}
+                key={item.dataVal}
+            >
+                {item.label ? item.label : item.dataVal}
+            </button>
+        ))
         return (
             <div className='buttons'>
-                <button data='c' onClick={e => this.props.onClick(e.target.data)} className='zero'> C</button>
-                <button data='ce' onClick={e => this.props.onClick(e.target.data)}> CE</button>
-                <button data='/' onClick={e => this.props.onClick(e.target.data)} className='orange'> ÷</button>
-
-                <button data='7' onClick={e => this.props.onClick(e.target.data)}> 7</button>
-                <button data='8' onClick={e => this.props.onClick(e.target.data)}> 8</button>
-                <button data='9' onClick={e => this.props.onClick(e.target.data)}> 9</button>
-                <button data='*' onClick={e => this.props.onClick(e.target.data)} className='orange'> ×</button>
-
-                <button data='4' onClick={e => this.props.onClick(e.target.data)}> 4</button>
-                <button data='5' onClick={e => this.props.onClick(e.target.data)}> 5</button>
-                <button data='6' onClick={e => this.props.onClick(e.target.data)}> 6</button>
-                <button data='-' onClick={e => this.props.onClick(e.target.data)} className='orange'> -</button>
-
-                <button data='1' onClick={e => this.props.onClick(e.target.data)}> 1</button>
-                <button data='2' onClick={e => this.props.onClick(e.target.data)}> 2</button>
-                <button data='3' onClick={e => this.props.onClick(e.target.data)}> 3</button>
-                <button data='+' onClick={e => this.props.onClick(e.target.data)} className='orange'> +</button>
-
-                <button data='0' onClick={e => this.props.onClick(e.target.data)} className='zero'> 0</button>
-                <button data='.' onClick={e => this.props.onClick(e.target.data)}> ,</button>
-                <button data='=' onClick={e => this.props.onClick(e.target.data)} className='orange'> =</button>
+                {listButton}
             </div>
         )
     }
